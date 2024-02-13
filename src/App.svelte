@@ -18,7 +18,7 @@
 
 <main
   class="h-full p-4 overflow-auto text-xs border-2 rounded-md sm:text-sm md:text-base"
-  style={`background-color: ${$theme.background}; color: ${$theme.foreground}; border-color: ${$theme.green};`}
+  style={`background-color: ${$theme.background}; color: ${$theme.foreground};`}
 >
 
   <History />

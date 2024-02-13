@@ -130,5 +130,7 @@ to share insights, generate new ideas, and network with one another. The
 Peripatetic School — simply referred to as the Peripatos after the ancient
 walkway of the Acropolis — was an informal institution of ancient Greece
 where members conducted philosophical and scientific inquiries.
+
+Type 'help' to see list of available commands.
 `,
 };
