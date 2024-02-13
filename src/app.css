@@ -20,18 +20,32 @@ body {
   background-color: #000099;
 }
 
+.banner {
+  white-space: pre-wrap;
+}
+
 main > div > div:first-child {
   display: none;
 }
 
-main > div:first-child > p {
-  margin-bottom: 24px;
+#input {
+  margin-top: 24px;
 }
 
 .buttons-row {
   display: flex;
   justify-content: center;
   white-space: pre-wrap;
+}
+
+.whitespace-pre {
+  white-space: pre-wrap;
+}
+
+.link {
+  color: #828282;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {

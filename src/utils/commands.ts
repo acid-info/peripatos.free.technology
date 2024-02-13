@@ -9,6 +9,11 @@ export const commands: Record<
   string,
   (args: string[]) => Promise<string> | string
 > = {
+  apply: async () => {
+    const htmlString = "<template>Please email us at <a class=\"link\" href=\"mailto:contact@free.technology\">contact@free.technology</a></template>";
+
+    return htmlString;
+  },
   help: () => "Available commands: " + Object.keys(commands).join(", "),
   hostname: () => hostname,
   whoami: () => "guest",
@@ -111,8 +116,62 @@ export const commands: Record<
       return `curl: could not fetch URL ${url}. Details: ${error}`;
     }
   },
-  banner: () => `
-██████╗ ███████╗██████╗ ██╗██████╗  █████╗ ████████╗██╗  ██╗ ██████╗ ███████╗
+  banner: () => {
+    function displayTextLetterByLetter(
+      elementClass: any,
+      text: any,
+      minDelay = 1,
+      maxDelay = 10
+    ) {
+      const elements = document.getElementsByClassName(elementClass);
+      const element = elements[elements.length - 1]
+      if (!element) return;
+
+      // Append cursor initially
+      const cursor = document.createElement("span");
+      cursor.className = "cursor";
+      element.appendChild(cursor);
+
+      let currentIndex = 0;
+
+      function displayNextLetter() {
+        if (currentIndex < text.length) {
+          let charToAdd = text[currentIndex];
+          if (text.substr(currentIndex, 4) === "<br>") {
+            charToAdd = "<br>";
+            currentIndex += 4;
+          } else {
+            currentIndex++;
+          }
+
+          // Insert the character or <br> before the cursor
+          if (charToAdd === "<br>") {
+            const brElement = document.createElement("br");
+            element?.insertBefore(brElement, cursor);
+          } else {
+            const textNode = document.createTextNode(charToAdd);
+            element?.insertBefore(textNode, cursor);
+          }
+
+          let randomDelay = Math.random() * (maxDelay - minDelay) + minDelay;
+          setTimeout(displayNextLetter, randomDelay);
+        } else {
+          // If all characters are added, remove the cursor
+          cursor.style.display = "none";
+          const baner = document.getElementsByClassName("banner")[0];
+          if (baner) {
+            // delete the banner
+            baner.remove();
+            // add the banner to the history
+            history.update((h) => [...h, { command: "banner", outputs: [text] }]);
+          }
+        }
+      }
+
+      displayNextLetter();
+    }
+    
+    const text = `██████╗ ███████╗██████╗ ██╗██████╗  █████╗ ████████╗██╗  ██╗ ██████╗ ███████╗
 ██╔══██╗██╔════╝██╔══██╗██║██╔══██╗██╔══██╗╚══██╔══╝██║  ██║██╔═══██╗██╔════╝
 ██████╔╝█████╗  ██████╔╝██║██████╔╝███████║   ██║   ███████║██║   ██║███████╗
 ██╔═══╝ ██╔══╝  ██╔══██╗██║██╔═══╝ ██╔══██║   ██║   ██╔══██║██║   ██║╚════██║
@@ -131,6 +190,10 @@ Peripatetic School — simply referred to as the Peripatos after the ancient
 walkway of the Acropolis — was an informal institution of ancient Greece
 where members conducted philosophical and scientific inquiries.
 
-Type 'help' to see list of available commands.
-`,
+Type 'help' to see list of available commands.`;
+
+    displayTextLetterByLetter("banner", text);
+
+    return '';
+  },
 };

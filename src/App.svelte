@@ -20,19 +20,19 @@
   class="h-full p-4 overflow-auto text-xs border-2 rounded-md sm:text-sm md:text-base"
   style={`background-color: ${$theme.background}; color: ${$theme.foreground}; border-color: transparent;`}
 >
-
   <History />
 
-  <div class="lex-col md:flex-row">
+  <div id="input" class="flex flex-col md:flex-row">
     <Ps1 />
 
     <Input />
-
-    <div class="buttons-row">{`
+  </div>
+  <div class="buttons-row">
+    {`
+    
 ----------------------------------------------------------------------------
-                        < Apply >           < X >
+                                    < X >
 -----------------------------------------------------------------------------
 `}
-    </div>
   </div>
 </main>
