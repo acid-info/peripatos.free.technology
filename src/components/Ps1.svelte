@@ -6,6 +6,6 @@
 <h1 class="flex font-bold">
   <span style={`color: ${$theme.yellow};`}>guest</span>
   <span style={`color: ${$theme.white}`}>@</span>
-  <span style={`color: ${$theme.white}`}>{hostname}</span>
+  <span style={`color: ${$theme.white}; width: max-content;`}>{hostname}</span>
   <span style={`color: ${$theme.white}`}>:~$</span>
 </h1>
