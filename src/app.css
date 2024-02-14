@@ -12,12 +12,11 @@
 }
 
 * {
-  scrollbar-width: thin;
-  scrollbar-color: #000099 #000099;
+  scrollbar-width: 0;
 }
 
 body {
-  background-color: #000099;
+  background-color: transparent;
 }
 
 .banner {
@@ -49,18 +48,18 @@ main > div > div:first-child {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  height: 5px;
+  width: 0px;
+  height: 0px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: none;
 }
