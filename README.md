@@ -1,4 +1,4 @@
-# [Peripathos](https://term.m4tt72.com)
+# [Peripatos](https://term.m4tt72.com)
 
 A terminal style website
 
