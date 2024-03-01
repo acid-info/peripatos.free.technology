@@ -10,7 +10,8 @@ export const commands: Record<
   (args: string[]) => Promise<string> | string
 > = {
   apply: async () => {
-    const htmlString = "<template>Please email us at <a class=\"link\" href=\"mailto:contact@free.technology\">contact@free.technology</a></template>";
+    const htmlString =
+      '<template>Please email us at <a class="link" href="mailto:contact@free.technology">contact@free.technology</a></template>';
 
     return htmlString;
   },
@@ -124,7 +125,7 @@ export const commands: Record<
       maxDelay = 10
     ) {
       const elements = document.getElementsByClassName(elementClass);
-      const element = elements[elements.length - 1]
+      const element = elements[elements.length - 1];
       if (!element) return;
 
       // Append cursor initially
@@ -163,14 +164,17 @@ export const commands: Record<
             // delete the banner
             baner.remove();
             // add the banner to the history
-            history.update((h) => [...h, { command: "banner", outputs: [text] }]);
+            history.update((h) => [
+              ...h,
+              { command: "banner", outputs: [text] },
+            ]);
           }
         }
       }
 
       displayNextLetter();
     }
-    
+
     const text = `██████╗ ███████╗██████╗ ██╗██████╗  █████╗ ████████╗ ██████╗ ███████╗
 ██╔══██╗██╔════╝██╔══██╗██║██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔════╝
 ██████╔╝█████╗  ██████╔╝██║██████╔╝███████║   ██║   ██║   ██║███████╗
@@ -180,20 +184,16 @@ export const commands: Record<
 
 -----------------------------------------------------------------------------
 
-The Peripatos is a members-only network of builders, technologists, and
-cypherpunks harnessing the transformational power of discovering together.
-We actively work to advance the knowledge and development of cryptography,
-privacy, and network states. We participate in regular roundtable
-discussions that focus on curated topics. The objective of these meetings is
-to share insights, generate new ideas, and network with one another. The
-Peripatetic School — simply referred to as the Peripatos after the ancient
-walkway of the Acropolis — was an informal institution of ancient Greece
-where members conducted philosophical and scientific inquiries.
+The Peripatos is a members-only network of cypherpunks, builders, technologists, and resource allocators harnessing the transformational power of discovering together. We actively work to advance the knowledge and development of cryptography, privacy, competitive governance and digital public goods. 
+
+As part of the Institute of Free Technology we support the development, adoption, and accessibility of solutions to digital age problems and are guided by our principles: liberty, censorship resistance, security, privacy, and inclusivity. We seek to connect with and support those innovating to defend our digital rights.
+
+We participate in regular roundtable discussions and in person events that focus on curated topics. The objective of these meetings is to share insights, generate new ideas, and build the future we want to see.
 
 Type 'help' to see list of available commands.`;
 
     displayTextLetterByLetter("banner", text);
 
-    return '';
+    return "";
   },
 };
