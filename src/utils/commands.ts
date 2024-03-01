@@ -184,11 +184,21 @@ export const commands: Record<
 
 -----------------------------------------------------------------------------
 
-The Peripatos is a members-only network of cypherpunks, builders, technologists, and resource allocators harnessing the transformational power of discovering together. We actively work to advance the knowledge and development of cryptography, privacy, competitive governance and digital public goods. 
+The Peripatos is a members-only network of cypherpunks, builders,
+technologists, and resource allocators harnessing the transformational power
+of discovering together. We actively work to advance the knowledge and
+development of cryptography, privacy, competitive governance and digital
+public goods. 
 
-As part of the Institute of Free Technology we support the development, adoption, and accessibility of solutions to digital age problems and are guided by our principles: liberty, censorship resistance, security, privacy, and inclusivity. We seek to connect with and support those innovating to defend our digital rights.
+As part of the Institute of Free Technology we support the development,
+adoption, and accessibility of solutions to digital age problems and are
+guided by our principles: liberty, censorship resistance, security, privacy,
+and inclusivity. We seek to connect with and support those innovating to
+defend our digital rights.
 
-We participate in regular roundtable discussions and in person events that focus on curated topics. The objective of these meetings is to share insights, generate new ideas, and build the future we want to see.
+We participate in regular roundtable discussions and in person events that
+focus on curated topics. The objective of these meetings is to share
+insights, generate new ideas, and build the future we want to see.
 
 Type 'help' to see list of available commands.`;
 
