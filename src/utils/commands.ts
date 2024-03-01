@@ -15,7 +15,16 @@ export const commands: Record<
 
     return htmlString;
   },
-  help: () => "Available commands: " + Object.keys(commands).join(", "),
+  help: () => {
+    const commandsList = Object.keys(commands);
+    const lineBreak = commandsList.findIndex((c) => c === "echo");
+
+    const list =
+      commandsList.slice(0, lineBreak).join(", ") +
+      "\n" +
+      commandsList.slice(lineBreak).join(", ");
+    return "Available commands: " + list;
+  },
   hostname: () => hostname,
   whoami: () => "guest",
   date: () => new Date().toLocaleString(),
