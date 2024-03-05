@@ -10,32 +10,33 @@ export const commands: Record<
   (args: string[]) => Promise<string> | string
 > = {
   apply: async () => {
-    const htmlString =
-      '<template>Please email us at <a class="link" href="mailto:contact@free.technology">contact@free.technology</a></template>';
+    // const htmlString =
+    //   '<template>Please email us at <a class="link" href="mailto:contact@free.technology">contact@free.technology</a></template>';
 
+    const htmlString = "Coming Soon.";
     return htmlString;
   },
   help: () => {
+    // const commandsList = Object.keys(commands);
+    // const lineBreak = commandsList.findIndex((c) => c === "echo");
+
+    // const list =
+    //   commandsList.slice(0, lineBreak).join(", ") +
+    //   "\n" +
+    //   commandsList.slice(lineBreak).join(", ");
+    // return "Available commands: " + list;
+
     const commandsList = Object.keys(commands);
-    const lineBreak = commandsList.findIndex((c) => c === "echo");
+    const filteredCommands = commandsList.filter(
+      (command) => command !== "banner"
+    );
 
-    const list =
-      commandsList.slice(0, lineBreak).join(", ") +
-      "\n" +
-      commandsList.slice(lineBreak).join(", ");
-    return "Available commands: " + list;
+    return `Available commands: ${filteredCommands.join(", ")}`;
   },
-  hostname: () => hostname,
-  whoami: () => "guest",
-  date: () => new Date().toLocaleString(),
-  vi: () => `why use vi? try 'emacs'`,
-  vim: () => `why use vim? try 'emacs'`,
-  emacs: () => `why use emacs? try 'vim'`,
-  echo: (args: string[]) => args.join(" "),
-  sudo: (args: string[]) => {
-    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+  email: () => {
+    window.open(`mailto:peripatos@free.technology`);
 
-    return `Permission denied: unable to run the command '${args[0]}' as root.`;
+    return `Opening mailto:peripatos@free.technology`;
   },
   theme: (args: string[]) => {
     const usage = `Usage: theme [args].
@@ -79,51 +80,6 @@ export const commands: Record<
       default: {
         return usage;
       }
-    }
-  },
-  repo: () => {
-    window.open(packageJson.repository.url, "_blank");
-
-    return "Opening repository...";
-  },
-  clear: () => {
-    history.set([]);
-
-    return "";
-  },
-  email: () => {
-    window.open(`mailto:${packageJson.author.email}`);
-
-    return `Opening mailto:${packageJson.author.email}...`;
-  },
-  weather: async (args: string[]) => {
-    const city = args.join("+");
-
-    if (!city) {
-      return "Usage: weather [city]. Example: weather Brussels";
-    }
-
-    const weather = await fetch(`https://wttr.in/${city}?ATm`);
-
-    return weather.text();
-  },
-  exit: () => {
-    return "Please close the tab to exit.";
-  },
-  curl: async (args: string[]) => {
-    if (args.length === 0) {
-      return "curl: no URL provided";
-    }
-
-    const url = args[0];
-
-    try {
-      const response = await fetch(url);
-      const data = await response.text();
-
-      return data;
-    } catch (error) {
-      return `curl: could not fetch URL ${url}. Details: ${error}`;
     }
   },
   banner: () => {
