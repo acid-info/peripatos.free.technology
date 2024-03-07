@@ -38,7 +38,7 @@ main > div > div:first-child {
 }
 
 .whitespace-pre {
-  white-space: pre-wrap;
+  white-space: pre;
 }
 
 .link {
@@ -82,4 +82,18 @@ main > div > div:first-child {
   background: transparent;
   color: white;
   border: 1px solid white;
+}
+
+@media (max-width: 768px) {
+  .apply-form {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 1rem !important;
+  }
+
+  .whitespace-pre {
+    font-size: 12px;
+  }
 }
