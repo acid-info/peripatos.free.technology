@@ -38,8 +38,8 @@
             params: {
               value: email,
               name: name || "",
-              x: x || "",
-              reason: reason || "",
+              x_x_handle: x || "",
+              x_reason: reason || "",
               list_id: 12,
               subscription_type: "email",
             },
