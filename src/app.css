@@ -63,3 +63,23 @@ main > div > div:first-child {
 ::-webkit-scrollbar-thumb:hover {
   background: none;
 }
+
+.apply-form {
+  display: flex;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.apply-input {
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid white;
+}
+
+.apply-submit {
+  padding: 4px 12px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}

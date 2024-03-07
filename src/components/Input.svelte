@@ -1,11 +1,11 @@
 <script lang="ts">
-  import { afterUpdate, onMount } from 'svelte';
-  import { history } from '../stores/history';
-  import { theme } from '../stores/theme';
-  import { commands } from '../utils/commands';
-  import { track } from '../utils/tracking';
+  import { afterUpdate, onMount } from "svelte";
+  import { history } from "../stores/history";
+  import { theme } from "../stores/theme";
+  import { commands } from "../utils/commands";
+  import { track } from "../utils/tracking";
 
-  let command = '';
+  let command = "";
   let historyIndex = -1;
 
   let input: HTMLInputElement;
@@ -14,28 +14,28 @@
     input.focus();
 
     if ($history.length === 0) {
-      const command = commands['banner'] as () => string;
+      const command = commands["banner"] as () => string;
 
-      console.log('command',command);
+      console.log("command", command);
 
       if (command) {
         const output = command();
-        console.log('output',output);
+        console.log("output", output);
 
-        $history = [...$history, { command: 'banner', outputs: [output] }];
+        $history = [...$history, { command: "banner", outputs: [output] }];
       }
     }
   });
 
   afterUpdate(() => {
-    input.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    input.scrollIntoView({ behavior: "smooth", block: "end" });
   });
 
   const handleKeyDown = async (event: KeyboardEvent) => {
-    if (event.key === 'Enter') {
-      const [commandName, ...args] = command.split(' ');
+    if (event.key === "Enter") {
+      const [commandName, ...args] = command.split(" ");
 
-      if (import.meta.env.VITE_TRACKING_ENABLED === 'true') {
+      if (import.meta.env.VITE_TRACKING_ENABLED === "true") {
         track(commandName, ...args);
       }
 
@@ -44,7 +44,7 @@
       if (commandFunction) {
         const output = await commandFunction(args);
 
-        if (commandName !== 'clear') {
+        if (commandName !== "clear") {
           $history = [...$history, { command, outputs: [output] }];
         }
       } else {
@@ -53,8 +53,8 @@
         $history = [...$history, { command, outputs: [output] }];
       }
 
-      command = '';
-    } else if (event.key === 'ArrowUp') {
+      command = "";
+    } else if (event.key === "ArrowUp") {
       if (historyIndex < $history.length - 1) {
         historyIndex++;
 
@@ -62,26 +62,26 @@
       }
 
       event.preventDefault();
-    } else if (event.key === 'ArrowDown') {
+    } else if (event.key === "ArrowDown") {
       if (historyIndex > -1) {
         historyIndex--;
         command =
           historyIndex >= 0
             ? $history[$history.length - 1 - historyIndex].command
-            : '';
+            : "";
       }
       event.preventDefault();
-    } else if (event.key === 'Tab') {
+    } else if (event.key === "Tab") {
       event.preventDefault();
 
       const autoCompleteCommand = Object.keys(commands).find((cmd) =>
-        cmd.startsWith(command),
+        cmd.startsWith(command)
       );
 
       if (autoCompleteCommand) {
         command = autoCompleteCommand;
       }
-    } else if (event.ctrlKey && event.key === 'l') {
+    } else if (event.ctrlKey && event.key === "l") {
       event.preventDefault();
 
       $history = [];
@@ -91,7 +91,11 @@
 
 <svelte:window
   on:click={() => {
-    input.focus();
+    const form = document.querySelector(".apply-form");
+
+    if (!form) {
+      input.focus();
+    }
   }}
 />
 

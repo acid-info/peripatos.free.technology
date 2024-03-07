@@ -10,10 +10,14 @@ export const commands: Record<
   (args: string[]) => Promise<string> | string
 > = {
   apply: async () => {
-    // const htmlString =
-    //   '<template>Please email us at <a class="link" href="mailto:contact@free.technology">contact@free.technology</a></template>';
+    const htmlString = `<template>
+<form class="apply-form" onsubmit="handleSubmit(event)">
+  <input class="apply-input" id="form-name" placeholder="First name or pseudonym" />
+  <input class="apply-input" id="form-email" placeholder="Email address" type="email" />
+  <button class="apply-submit">Submit</button>
+</form>
+</template>`;
 
-    const htmlString = "Coming Soon.";
     return htmlString;
   },
   help: () => {

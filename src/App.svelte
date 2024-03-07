@@ -14,6 +14,47 @@
       src={import.meta.env.VITE_TRACKING_URL}
     ></script>
   {/if}
+  <script>
+    async function handleSubmit(event) {
+      event.preventDefault();
+
+      const form = document.querySelector(".apply-form");
+      const name = form.querySelector("#form-name").value;
+      const email = form.querySelector("#form-email").value;
+
+      console.log(name, email);
+
+      const res = await fetch(
+        `https://odoo.logos.co/website_mass_mailing/subscribe2`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            jsonrpc: "2.0",
+            method: "call",
+            params: {
+              email: email,
+              name: name,
+              list_id: 12,
+              subscription_type: "email",
+            },
+          }),
+        }
+      );
+
+      const data = await res.json();
+
+      if (data.error) {
+        console.error(data.error);
+        alert("There was an error submitting your application.");
+      } else {
+        console.log(data);
+        alert("Thank you for applying!");
+      }
+    }
+  </script>
 </svelte:head>
 
 <main
