@@ -22,7 +22,7 @@
       const name = form.querySelector("#form-name").value;
       const email = form.querySelector("#form-email").value;
 
-      const x = form.querySelector("#form-x");
+      const x = form.querySelector("#form-x").value;
       const reason = form.querySelector("#form-reason").value;
 
       const res = await fetch(
