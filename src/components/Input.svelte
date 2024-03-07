@@ -16,8 +16,6 @@
     if ($history.length === 0) {
       const command = commands["banner"] as () => string;
 
-      console.log("command", command);
-
       if (command) {
         const output = command();
         console.log("output", output);

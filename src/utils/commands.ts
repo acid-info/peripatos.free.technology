@@ -13,7 +13,7 @@ export const commands: Record<
     const htmlString = `<template>
 <form class="apply-form" onsubmit="handleSubmit(event)">
   <input class="apply-input" id="form-name" placeholder="First name or pseudonym" />
-  <input class="apply-input" id="form-email" placeholder="Email address" type="email" />
+  <input class="apply-input" id="form-email" placeholder="Email address" type="email" required />
   <button class="apply-submit">Submit</button>
 </form>
 </template>`;
