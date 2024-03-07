@@ -22,6 +22,9 @@
       const name = form.querySelector("#form-name").value;
       const email = form.querySelector("#form-email").value;
 
+      const x = form.querySelector("#form-x");
+      const reason = form.querySelector("#form-reason").value;
+
       const res = await fetch(
         `https://odoo.logos.co/website_mass_mailing/subscribe2`,
         {
@@ -35,6 +38,8 @@
             params: {
               value: email,
               name: name || "",
+              x: x || "",
+              reason: reason || "",
               list_id: 12,
               subscription_type: "email",
             },

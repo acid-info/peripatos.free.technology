@@ -66,9 +66,11 @@ main > div > div:first-child {
 
 .apply-form {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   margin-top: 24px;
   gap: 12px;
+  width: 270px;
 }
 
 .apply-input {

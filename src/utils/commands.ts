@@ -13,7 +13,9 @@ export const commands: Record<
     const htmlString = `<template>
 <form class="apply-form" onsubmit="handleSubmit(event)">
   <input class="apply-input" id="form-name" placeholder="Name or pseudonym" />
-  <input class="apply-input" id="form-email" placeholder="Email address" type="email" required />
+  <input class="apply-input" id="form-email" placeholder="Email (required)" type="email" required />
+  <input class="apply-input" id="form-x" placeholder="X handle" />
+  <input class="apply-input" id="form-reason" placeholder="Why do you want to join?" />
   <button class="apply-submit">Submit</button>
 </form>
 </template>`;
