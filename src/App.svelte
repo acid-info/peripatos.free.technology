@@ -26,7 +26,7 @@
       const reason = form.querySelector("#form-reason").value;
 
       const res = await fetch(
-        `https://odoo.logos.co/website_mass_mailing/subscribe2`,
+        `https://odoo.logos.co/web/dataset/call_kw/mailing.contact/create`,
         {
           method: "POST",
           headers: {
@@ -38,10 +38,14 @@
             params: {
               value: email,
               name: name || "",
-              x_x_handle: x || "",
-              x_reason: reason || "",
               list_id: 12,
               subscription_type: "email",
+              args: [
+                {
+                  x_social: x || "",
+                  x_reason: reason || "",
+                },
+              ],
             },
           }),
         }
