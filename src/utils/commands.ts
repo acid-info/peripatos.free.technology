@@ -12,10 +12,23 @@ export const commands: Record<
   apply: async () => {
     const htmlString = `<template>
 <form class="apply-form" onsubmit="handleSubmit(event)">
-  <input class="apply-input" id="form-name" placeholder="Name or pseudonym" />
-  <input class="apply-input" id="form-email" placeholder="Email (required)" type="email" required />
-  <input class="apply-input" id="form-x" placeholder="X handle" />
-  <input class="apply-input" id="form-reason" placeholder="Why do you want to join?" />
+  <p>Apply for membership.</p>
+  <br/>
+  <label for="form-name">Name or pseudonym</label>
+  <input class="apply-input" id="form-name" placeholder="Enter here" />
+  
+  <label for="form-email">Email (required)</label>
+  <input class="apply-input" id="form-email" placeholder="Enter here" type="email" required />
+  
+  <label for="form-x">X handle</label>
+  <input class="apply-input" id="form-x" placeholder="Enter here" />
+  
+  <label for="form-reason">Why do you want to join?</label>
+  <input class="apply-input" id="form-reason" placeholder="Enter here" />
+
+  <label for="form-contribution">What do you intend to give back to the community?</label>
+  <input class="apply-input" id="form-contribution" placeholder="Enter here" />
+  
   <button class="apply-submit">Submit</button>
 </form>
 </template>`;

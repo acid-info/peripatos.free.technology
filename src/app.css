@@ -73,10 +73,19 @@ main > div > div:first-child {
   width: 270px;
 }
 
+.apply-form > label {
+  color: white;
+}
+
+.apply-form > p {
+  color: white;
+}
+
 .apply-input {
   padding: 4px 12px;
   background: transparent;
   border: 1px solid white;
+  margin-bottom: 12px;
 }
 
 .apply-submit {
@@ -84,6 +93,8 @@ main > div > div:first-child {
   background: transparent;
   color: white;
   border: 1px solid white;
+  margin-top: 12px;
+  margin-bottom: 24px;
 }
 
 @media (max-width: 768px) {

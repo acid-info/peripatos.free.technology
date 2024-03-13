@@ -24,6 +24,7 @@
 
       const x = form.querySelector("#form-x").value;
       const reason = form.querySelector("#form-reason").value;
+      const contribution = form.querySelector("#form-contribution").value;
 
       const res = await fetch(
         `https://odoo.logos.co/website_mass_mailing/subscribe3`,
@@ -42,6 +43,7 @@
               subscription_type: "email",
               social: x || "",
               reason: reason || "",
+              contribution: contribution || "",
             },
           }),
         }
