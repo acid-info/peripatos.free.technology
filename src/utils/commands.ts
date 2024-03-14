@@ -26,7 +26,7 @@ export const commands: Record<
   <label for="form-reason">Why do you want to join?</label>
   <input class="apply-input" id="form-reason" placeholder="Enter here" />
 
-  <label for="form-contribution">What do you intend to give back to the community?</label>
+  <label for="form-contribution">What do you bring to the table?</label>
   <input class="apply-input" id="form-contribution" placeholder="Enter here" />
   
   <button class="apply-submit">Submit</button>
