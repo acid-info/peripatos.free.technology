@@ -14,8 +14,8 @@ export const commands: Record<
 <form class="apply-form" onsubmit="handleSubmit(event)">
   <p>Apply for membership.</p>
   <br/>
-  <label for="form-name">Name or pseudonym</label>
-  <input class="apply-input" id="form-name" placeholder="Enter here" />
+  <label for="form-name">Name or pseudonym (required)</label>
+  <input class="apply-input" id="form-name" placeholder="Enter here" required />
   
   <label for="form-email">Email (required)</label>
   <input class="apply-input" id="form-email" placeholder="Enter here" type="email" required />
