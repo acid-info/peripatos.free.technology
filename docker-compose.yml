@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    #image: ghcr.io/m4tt72/terminal:svelte
+    container_name: '${CONTAINER_NAME:-peripatos-app}'
     build: .
     restart: unless-stopped
     ports:
