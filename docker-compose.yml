@@ -1,10 +1,9 @@
 version: '3'
 
 services:
-  terminal:
+  app:
     #image: ghcr.io/m4tt72/terminal:svelte
     build: .
-    container_name: terminal
     restart: unless-stopped
     ports:
       - '0.0.0.0:${PORT:-3000}:${PORT:-3000}'
