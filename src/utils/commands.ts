@@ -76,7 +76,7 @@ export const commands: Record<
         let result = themes.map((t) => t.name.toLowerCase()).join(", ");
         result += `You can preview all these themes here: ${packageJson.repository.url}/tree/master/docs/themes`;
 
-        return result;
+        return `<template><span class="theme-list">${result}</span></template>`;
       }
 
       case "set": {
@@ -90,6 +90,13 @@ export const commands: Record<
         if (!t) {
           return `Theme '${selectedTheme}' not found. Try 'theme ls' to see all available themes.`;
         }
+
+        document.documentElement.style.setProperty(
+          "--text-color",
+          `${t.foreground}`
+        );
+
+        document.documentElement.style.setProperty("--green", `${t.green}`);
 
         theme.set(t);
 

@@ -74,27 +74,31 @@ main > div > div:first-child {
 }
 
 .apply-form > label {
-  color: white;
+  color: var(--green);
 }
 
 .apply-form > p {
-  color: white;
+  color: var(--green);
 }
 
 .apply-input {
   padding: 4px 12px;
   background: transparent;
-  border: 1px solid white;
+  border: 1px solid var(--green);
   margin-bottom: 12px;
 }
 
 .apply-submit {
   padding: 4px 12px;
   background: transparent;
-  color: white;
-  border: 1px solid white;
+  color: var(--green);
+  border: 1px solid var(--green);
   margin-top: 12px;
   margin-bottom: 24px;
+}
+
+.theme-list {
+  white-space: pre-wrap !important;
 }
 
 @media (max-width: 768px) {

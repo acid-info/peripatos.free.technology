@@ -13,6 +13,15 @@
   onMount(() => {
     input.focus();
 
+    console.log("dsadas", $theme);
+
+    document.documentElement.style.setProperty(
+      "--text-color",
+      `${$theme.foreground}`
+    );
+
+    document.documentElement.style.setProperty("--green", `${$theme.green}`);
+
     if ($history.length === 0) {
       const command = commands["banner"] as () => string;
 
