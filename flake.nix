@@ -1,6 +1,4 @@
 {
-  description = "Flake file for logos website ";
-
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-24.05";
   };
